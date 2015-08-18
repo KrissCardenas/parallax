@@ -250,11 +250,11 @@ public class Mesh extends GeometryObject
 					
 					if ( material.getSides() == Material.SIDE.BACK ) {
 
-						intersectionPoint = _ray.intersectTriangle( _vC, _vB, _vA, true, null );
+						intersectionPoint = _ray.intersectTriangle( _vC, _vB, _vA, true);
 
 					} else {
 
-						intersectionPoint = _ray.intersectTriangle( _vA, _vB, _vC, material.getSides() != Material.SIDE.DOUBLE, null );
+						intersectionPoint = _ray.intersectTriangle( _vA, _vB, _vC, material.getSides() != Material.SIDE.DOUBLE);
 
 					}
 
@@ -262,7 +262,7 @@ public class Mesh extends GeometryObject
 
 					intersectionPoint.apply( this.matrixWorld );
 
-					double distance = raycaster.getRay().getOrigin().distanceTo( intersectionPoint );
+					double distance = raycaster.getRay().getOrigin().distanceTo( intersectionPoint);
 
 					if ( distance < precision || distance < raycaster.getNear() || distance > raycaster.getFar() ) continue;
 
